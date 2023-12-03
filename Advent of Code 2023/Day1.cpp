@@ -40,11 +40,10 @@ void partOne(ifstream input) {
 	printf("The total is %i", total);
 }
 
-bool checkKeyword(string line, int start, string keyword, int * first, int * last, int value) {
-	if (start + keyword.length() - 2 > line.length()) return false;
+void checkKeyword(string line, int start, string keyword, int * first, int * last, int value) {
+	if (start + keyword.length() - 2 > line.length()) return;
 	string sub = line.substr(start , keyword.length());
 	if (sub == keyword) {
-		//printf("Keyword found: %i \n", value);
 		if (*first == -1) *first = value;
 		*last = value;
 	}
