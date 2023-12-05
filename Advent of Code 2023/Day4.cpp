@@ -61,7 +61,6 @@ void day4part1(std::ifstream * input) {
 }
 
 void day4part2(std::ifstream* input) {
-	int total = 0;
 	vector<int> winningNums;
 	vector<int> numOfMatching;
 	vector<int> numOfCopies;
