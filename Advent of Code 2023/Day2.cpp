@@ -1,7 +1,7 @@
 #include "Day2.h"
 
 int dayTwo() {
-	string filename = "day2_input.txt";
+	string filename = "day2_test.txt";
 	std::ifstream input;
 	if (!loadInput(&input, filename)) {
 		printf("Error, file %s not found. Exiting.", filename);
@@ -17,16 +17,12 @@ int day2part1(std::ifstream *input) {
 	int maxRed = 12;
 	int maxGreen = 13;
 	int maxBlue = 14;
-	int totalGames = 0;
 	while (!input->eof()) {
 		string line;
 		getline(*input, line);
 		if (line.empty()) break;
-		totalGames++;
 		int colonPos = line.find(":");
 		int gameNumber = std::stoi(line.substr(5, colonPos - 5));
-		printf("Game : %i \n",gameNumber);
-		
 		line = line.substr(colonPos + 2, line.length() - colonPos + 2);
 		//int length =
 		bool gameOver = false;
