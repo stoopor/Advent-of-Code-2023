@@ -12,7 +12,6 @@ void day4part1(std::ifstream * input) {
 		int ip = colonPos + 2;
 		int numStart = ip;
 		char cur = line.at(ip);
-		int cardValue = 0;
 		while (cur != '|') {
 			while (cur == ' ') {
 				ip++;
@@ -76,7 +75,6 @@ void day4part2(std::ifstream* input) {
 		int ip = colonPos + 2;
 		int numStart = ip;
 		char cur = line.at(ip);
-		int cardValue = 0;
 		while (cur != '|') {
 			while (cur == ' ') {
 				ip++;
@@ -127,13 +125,13 @@ void day4part2(std::ifstream* input) {
 		}
 		totalCopies += numOfCopies.at(i);
 	}
-	printf("The total amount of copies is: %i\n", total);
+	printf("The total amount of copies is: %i\n", totalCopies);
 }
 
 
 void day4() {
 	std::ifstream input;
-	string filename = "day4_input.txt";
+	string filename = "day4_test.txt";
 	if (!loadInput(&input, filename)) {
 		printf("Error, file %s not found. Exiting.", filename);
 	}
